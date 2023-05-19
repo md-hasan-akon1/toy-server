@@ -1,0 +1,84 @@
+[
+    {
+      "subcategory": "Sports Cars",
+      "picture": "https://i.ibb.co/yySmTv9/s.jpg",
+      "name": "Ferrari 488 GTB",
+      "price": "$49.99",
+      "rating": 4.5,
+      "availableQuantity": 10,
+      "detailDescription": "Experience the thrill of the race with the Ferrari 488 GTB car toy. This sleek and powerful sports car replica is perfect for car enthusiasts of all ages."
+    },
+    {
+      "subcategory": "Sports Cars",
+      "picture": "https://i.ibb.co/ZB0PyDy/s-1.jpg",
+      "name": "Lamborghini Aventador",
+      "price": "$59.99",
+      "rating": 4.8,
+      "availableQuantity": 5,
+      "detailDescription": "Unleash the beast with the Lamborghini Aventador car toy. Its iconic design and high-performance features make it a must-have for any car collector."
+    },
+    {
+      "subcategory": "Sports Cars",
+      "picture": "https://i.ibb.co/WHKS8hD/s-2.jpg",
+      "name": "Porsche 911 GT3",
+      "price": "$54.99",
+      "rating": 4.6,
+      "availableQuantity": 8,
+      "detailDescription": "Experience the precision engineering of the Porsche 911 GT3. This car toy combines speed and style for an exhilarating playtime experience."
+    },
+    {
+      "subcategory": "Off-Road Vehicles",
+      "picture": "https://i.ibb.co/SsTPr43/o-1.jpg",
+      "name": "Jeep Wrangler Rubicon",
+      "price": "$39.99",
+      "rating": 4.3,
+      "availableQuantity": 12,
+      "detailDescription": "Conquer any terrain with the Jeep Wrangler Rubicon car toy. Its rugged design and off-road capabilities make it the perfect companion for outdoor adventures."
+    },
+    {
+      "subcategory": "Off-Road Vehicles",
+      "picture": "https://i.ibb.co/zndNDky/o-3.jpg",
+      "name": "Ford F-150 Raptor",
+      "price": "$44.99",
+      "rating": 4.7,
+      "availableQuantity": 6,
+      "detailDescription": "Get ready to tackle tough trails with the Ford F-150 Raptor car toy. Its powerful engine and durable construction ensure hours of off-road fun."
+    },
+    {
+      "subcategory": "Off-Road Vehicles",
+      "picture": "https://i.ibb.co/GvcMLSs/02.jpg",
+      "name": "Toyota Land Cruiser",
+      "price": "$42.99",
+      "rating": 4.4,
+      "availableQuantity": 9,
+      "detailDescription": "Explore new territories with the Toyota Land Cruiser car toy. Its versatility and reliability make it an ideal choice for adventurous playtime."
+    },
+    {
+      "subcategory": "Vintage Cars",
+      "picture": "https://i.ibb.co/Gp2jRTv/c.jpg",
+      "name": "Volkswagen Beetle",
+      "price": "$29.99",
+      "rating": 4.2,
+      "availableQuantity": 15,
+      "detailDescription": "Take a trip back in time with the classic Volkswagen Beetle car toy. Its retro charm and timeless design will captivate both kids and adults."
+    },
+    {
+      "subcategory": "Vintage Cars",
+      "picture": "https://i.ibb.co/16CVcKj/c1.jpg",
+      "name": "Chevrolet Camaro SS",
+      "price": "$34.99",
+      "rating": 4.6,
+      "availableQuantity": 7,
+      "detailDescription": "Experience the power of American muscle with the Chevrolet Camaro SS car toy. Its iconic looks and impressive performance make it a collector's dream."
+    },
+    {
+      "subcategory": "Vintage Cars",
+      "picture": "https://i.ibb.co/0m74867/c2.jpg",
+      "name": "Ford Mustang GT",
+      "price": "$32.99",
+      "rating": 4.5,
+      "availableQuantity": 11,
+      "detailDescription": "Feel the adrenaline rush with the Ford Mustang GT car toy. Its sleek design and roaring engine will ignite your passion for speed."
+    }
+  ]
+  
