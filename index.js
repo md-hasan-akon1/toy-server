@@ -77,6 +77,25 @@ async function run() {
       const result=await addToysCollection.find({email:req.query?.email}).toArray();
       res.send(result)
     })
+    app.patch('/update/:id', async(req,res)=>{
+      const id =req.params.id;
+      console.log(id)
+      const query={_id:new ObjectId(id)}
+      const body=req.body;
+      const options = { upsert: true };
+      const updateDoc = {
+        $set: {
+         ...body
+        },
+      };
+      const result=await addToysCollection.updateOne(query,updateDoc,options);
+      res.send(result); 
+    })
+
+  
+
+
+
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({
