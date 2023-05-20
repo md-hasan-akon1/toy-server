@@ -11,7 +11,8 @@ app.use(express.json())
 console.log(process.env.DB_user)
 const {
   MongoClient,
-  ServerApiVersion
+  ServerApiVersion,
+  ObjectId
 } = require('mongodb');
 const uri = `mongodb+srv://${process.env.DB_user}:${process.env.DB_pass}@cluster0.ytnqryr.mongodb.net/?retryWrites=true&w=majority`;
 
@@ -28,27 +29,37 @@ async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
-
+    const addToysCollection = client.db('addToys').collection('toys')
     const toysCollection = client.db('CarsToy').collection('cars');
-    app.post('/addtoys',async(req, res) => {
+    app.post('/addtoys', async (req, res) => {
       const body = req.body;
-      const result=await toysCollection.insertOne(body);
+      const result = await addToysCollection.insertOne(body);
       res.send(result);
 
     })
 
-    app.get('/data/:category', async(req,res)=>{
-      const category=req.params.category;
-      if(category=='Vintage Cars'|| category=='Off-Road Vehicles'||category=='Sports Cars'){
-        const result=await toysCollection.find({subcategory:category}).toArray();
+    app.get('/data/:category', async (req, res) => {
+      const category = req.params.category;
+      if (category == 'Vintage Cars' || category == 'Off-Road Vehicles' || category == 'Sports Cars') {
+        const result = await toysCollection.find({
+          subcategory: category
+        }).toArray();
         res.send(result)
-      }
-      else{
-        res.send({massage:"category data not found"})
+      } else {
+        res.send({
+          massage: "category data not found"
+        })
       }
 
     })
-
+    app.get('/viewDetail/:id', async (req, res) => {
+      const id = req.params.id;
+      const query = {
+        _id: new ObjectId(id)
+      }
+      const result = await toysCollection.find(query).toArray();
+      res.send(result)
+    })
 
 
 
