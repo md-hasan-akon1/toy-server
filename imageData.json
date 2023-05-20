@@ -1,9 +1,5 @@
 [
-    {
-      "id": 1,
-      "img": "https://i.ibb.co/0Jwjr2D/car-1.jpg",
-      "title": "ferary"
-    },
+    
     {
       "id": 2,
       "img": "https://i.ibb.co/64Mp6Js/g-1.jpg",
@@ -14,11 +10,7 @@
       "img": "https://i.ibb.co/HCKBjJD/g-2.jpg",
       "title": "racing car"
     },
-    {
-      "id": 4,
-      "img": "https://i.ibb.co/Kj0BHgC/g-4.jpg",
-      "title": "micro car"
-    },
+   
     {
       "id": 5,
       "img": "https://i.ibb.co/Tby6220/g-3.jpg",
@@ -89,11 +81,7 @@
       "img": "https://i.ibb.co/3fHXrcj/g-18.jpg",
       "title": "open jip"
     },
-    {
-      "id": 19,
-      "img": "https://i.ibb.co/0Jwjr2D/car-1.jpg",
-      "title": "ferary"
-    },
+   
     {
       "id": 20,
       "img": "https://i.ibb.co/64Mp6Js/g-1.jpg",
@@ -104,11 +92,7 @@
       "img": "https://i.ibb.co/HCKBjJD/g-2.jpg",
       "title": "racing car"
     },
-    {
-      "id": 22,
-      "img": "https://i.ibb.co/Kj0BHgC/g-4.jpg",
-      "title": "micro car toys"
-    },
+   
     {
       "id": 23,
       "img": "https://i.ibb.co/Tby6220/g-3.jpg",
