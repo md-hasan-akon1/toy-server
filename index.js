@@ -31,6 +31,29 @@ async function run() {
     client.connect();
     const addToysCollection = client.db('addToys').collection('toys')
     const toysCollection = client.db('CarsToy').collection('cars');
+
+
+
+
+
+    const indexKeys = {
+      name: 1
+    };
+    const indexOptions = {
+      name: "toyname"
+    };
+    const result = await addToysCollection.createIndex(indexKeys, indexOptions);
+
+    app.get('/allToys/:text', async (req, res) => {
+      const search = req.params.text;
+      const result = await addToysCollection.find({
+        name: search,
+      }).toArray()
+      res.send(result)
+    })
+
+
+
     app.post('/addtoys', async (req, res) => {
       const body = req.body;
       const result = await addToysCollection.insertOne(body);
@@ -72,24 +95,30 @@ async function run() {
       const result = await addToysCollection.find().limit(20).toArray()
       res.send(result)
     })
-  
-    app.get('/myToys',async (req, res) => {
-      const result=await addToysCollection.find({email:req.query?.email}).toArray();
+
+    app.get('/myToys', async (req, res) => {
+      const result = await addToysCollection.find({
+        email: req.query?.email
+      }).toArray();
       res.send(result)
     })
-    app.patch('/update/:id', async(req,res)=>{
-      const id =req.params.id;
+    app.patch('/update/:id', async (req, res) => {
+      const id = req.params.id;
       console.log(id)
-      const query={_id:new ObjectId(id)}
-      const body=req.body;
-      const options = { upsert: true };
+      const query = {
+        _id: new ObjectId(id)
+      }
+      const body = req.body;
+      const options = {
+        upsert: true
+      };
       const updateDoc = {
         $set: {
-         ...body
+          ...body
         },
       };
-      const result=await addToysCollection.updateOne(query,updateDoc,options);
-      res.send(result); 
+      const result = await addToysCollection.updateOne(query, updateDoc, options);
+      res.send(result);
     })
 
     app.delete('/addDataDetail/:id', async (req, res) => {
