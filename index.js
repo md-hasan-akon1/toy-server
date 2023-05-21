@@ -8,7 +8,7 @@ require('dotenv').config()
 app.use(express.json())
 // toys Shop 
 // eUDFPWMFuWaCTOey
-console.log(process.env.DB_user)
+
 const {
   MongoClient,
   ServerApiVersion,
@@ -36,13 +36,9 @@ async function run() {
 
 
 
-    const indexKeys = {
-      name: 1
-    };
-    const indexOptions = {
-      name: "toyname"
-    };
-    const result = await addToysCollection.createIndex(indexKeys, indexOptions);
+    // const indexKeys = { name: 1};
+    // const indexOptions = {name: "toyname"};
+    // const result = await addToysCollection.createIndex(indexKeys, indexOptions);
 
     app.get('/allToys/:text', async (req, res) => {
       const search = req.params.text;
@@ -56,6 +52,7 @@ async function run() {
 
     app.post('/addtoys', async (req, res) => {
       const body = req.body;
+      body.price=parseInt(body.price)
       const result = await addToysCollection.insertOne(body);
       res.send(result);
 
@@ -97,21 +94,26 @@ async function run() {
     })
 
     app.get('/myToys', async (req, res) => {
-      const result = await addToysCollection.find({
-        email: req.query?.email
-      }).toArray();
+      const text=req.query.sort
+     if(text=='ascending'){
+      const result = await addToysCollection.find({email: req.query?.email}).sort({price:1}).toArray();
       res.send(result)
+     }
+     if(text=='descending'){
+      const result = await addToysCollection.find({email: req.query?.email}).sort({price:-1}).toArray();
+      res.send(result)
+     }
+   
+      
     })
     app.patch('/update/:id', async (req, res) => {
       const id = req.params.id;
-      console.log(id)
       const query = {
         _id: new ObjectId(id)
       }
       const body = req.body;
-      const options = {
-        upsert: true
-      };
+      body.price=parseInt(body.price)
+      const options = {upsert: true};
       const updateDoc = {
         $set: {
           ...body
